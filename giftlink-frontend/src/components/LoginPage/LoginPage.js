@@ -55,8 +55,9 @@ function LoginPage() {
       if (json.authtoken) {
         // Task 2: Set user details
         sessionStorage.setItem("auth-token", json.authtoken);
-        sessionStorage.setItem("name", json.userName);
-        sessionStorage.setItem("email", json.userEmail);
+        sessionStorage.setItem("name", email.split("@")[0]); // temporary fallback
+        sessionStorage.setItem("email", email);
+
 
         // Task 3: Set the user's state to log in using the `useAppContext`.
         setIsLoggedIn(true);
